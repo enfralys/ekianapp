@@ -1,0 +1,51 @@
+ .grid1{
+    padding-right: 5%;
+    padding-left: 5%;
+    background: rgb(107,17,26);
+    background: linear-gradient(180deg, rgba(107,17,26,1) 23%, rgba(255,255,255,1) 23%, rgba(255,255,255,1) 66%, rgba(107,17,26,1) 66%);    
+}
+    
+ p{
+     color: white;
+ }
+
+ ion-toolbar{
+    .toolbar-background
+    {
+        background-color:#6b111a; 
+    }
+ }
+ ion-header{
+     color: white;
+    padding-right: 2%;
+    padding-left: 2%;
+    background-color:#6b111a; 
+    
+ }
+
+
+ ion-card-subtitle{
+    text-align: center;;
+ }
+ .card{
+     width: 100%;
+     background-color: white;
+
+    col{
+      
+        background-color: white;
+     }
+ }
+
+ h1{
+    font-family: roboto;
+    color: #212121;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+ }
+
+ .sub{
+     color: #757575
+
+
+ }

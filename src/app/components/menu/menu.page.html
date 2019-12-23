@@ -1,0 +1,65 @@
+
+<ion-header color="danger">
+  <ion-toolbar color="rojo">
+  
+    
+    <ion-select slot="secondary" placeholder="Dispositive">
+      <ion-select-option value="f">A100</ion-select-option>
+      <ion-select-option value="m">S500</ion-select-option>
+    </ion-select>
+
+
+    <ion-title></ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-avatar slot="icon-only">
+          <img src="assets/avtar.jpg">
+        </ion-avatar>      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  fullscreen>
+ 
+  <div class="pad" >
+    <ion-row>
+      <ion-col size="9"> <p> Cantidad de productos: {{productos.length}}</p></ion-col>
+      <ion-col  class="center" size="3"><ion-button  color="medium" (click)="presentModal()">
+        <ion-icon name="list"></ion-icon>     
+       </ion-button>
+      </ion-col>
+    </ion-row>
+
+  <ion-list>
+    <ion-row style="font-family: Bahnschrift;
+    font-size: 17px;
+">
+      <ion-col size="3">Imagen</ion-col>
+      <ion-col size="3">Producto</ion-col>
+      <ion-col size="3">Precio</ion-col>
+       <ion-col size="3">Unidad</ion-col>
+    </ion-row>
+
+    <ion-item *ngFor="let item of productos" class="item"  style="text-align: center;" color="rojo">
+      <ion-avatar slot="start">
+        <img src="assets/avtar.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.producto}}</h2>
+      
+      </ion-label>
+      <ion-label>
+        <h2>{{item.precio}}</h2>
+      
+      </ion-label>
+      <ion-label>
+        <h2 [ngClass]="{'low': item.cantidad <= 3, 'medium': item.cantidad >= 4 && item.cantidad <= 9, 'full': item.cantidad >= 10  }">{{item.cantidad}}</h2>
+      
+      </ion-label>
+    </ion-item>
+
+    
+  </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,88 @@
+.main{
+   height: 100%;
+   width: 100%;
+   padding-right: 2%;
+    padding-left: 2%;
+    background: rgb(107,17,26);
+    background: linear-gradient(180deg, rgba(107,17,26,1) 23%, rgba(255,255,255,1) 23%, rgba(255,255,255,1) 66%, rgba(107,17,26,1) 66%);    
+}
+    
+ p{
+     color: #6b111a;
+     font-family: roboto;
+     font-weight: bold;
+     margin-bottom: 15%;
+ }
+.pad{
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.class{
+    display: flex;
+    justify-content: center;
+}
+ .inner-scroll{
+    padding-right: 3%;
+    padding-left: 3%;
+ }
+ ion-toolbar{
+    .toolbar-background
+    {
+        background-color:#6b111a; 
+    }
+ }
+ ion-header{
+     color: white;
+    padding-right: 2%;
+    padding-left: 2%;
+    background-color:#6b111a; 
+    
+ }
+
+
+ ion-card-subtitle{
+    text-align: center;;
+ }
+ .card{
+     width: 100%;
+     background-color: white;
+
+    col{
+      
+        background-color: white;
+     }
+ }
+
+ h1{
+    font-family: roboto;
+    color: #212121;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+ }
+
+ .low{
+    background-color: #f1304d;
+    border-radius: 14px;
+ }
+
+ .medium{
+    background-color: #feb118;
+    border-radius: 14px;
+ }
+
+ .full{
+    background-color: #19c86b;
+    border-radius: 14px;
+ }
+ .sub{
+     color: #757575
+
+
+ }
+
+ .item{
+     margin-top: 10px;
+     background: rgb(192,14,17);
+     background: linear-gradient(180deg, rgba(192,14,17,1) 21%, rgba(96,7,9,1) 83%);
+ }

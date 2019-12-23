@@ -1,0 +1,33 @@
+
+
+ <ion-grid fixed>
+   <ion-row style="background-image: radial-gradient(39px at center -17% , #c10d10 0%, #530204 275px, rgba(12, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 0px);" >
+ 
+          <div class="back">
+              <ion-card class="card"> 
+              <ion-card-header>
+                <ion-card-title>Bienvenidos</ion-card-title>
+              </ion-card-header>
+              
+                <ion-card-content>
+                  <ion-input placeholder="Correo" [(ngModel)]="email"></ion-input>
+                  <ion-input placeholder="Contraseña" type="password" [(ngModel)]="password"></ion-input>
+                  <ion-button (click)="login()" color="danger" expand="block">Ingresar</ion-button>
+                </ion-card-content>
+              </ion-card> 
+            </div>
+    
+   </ion-row>
+   <ion-row class="ion-align-items-center">
+
+     
+          <div class="down">
+              
+              <ion-img class="img" src="assets/logo.png"></ion-img>
+        
+            </div>
+      
+    </ion-row>
+    
+     
+ </ion-grid>

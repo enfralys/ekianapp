@@ -1,0 +1,7 @@
+{
+  "name": "ekianapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
