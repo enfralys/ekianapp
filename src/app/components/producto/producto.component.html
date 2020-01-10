@@ -2,9 +2,12 @@
   <ion-toolbar color="rojo">
   
     
-      <ion-select slot="secondary" placeholder="Dispositive">
-        <ion-select-option value="f">A100</ion-select-option>
-        <ion-select-option value="m">S500</ion-select-option>
+      <ion-select slot="secondary" placeholder="Dispositive" [(ngModel)]="sdispositive">
+        <div *ngFor="let item of dispositives">
+        <ion-select-option  value ="{{item.deviceid}}" >{{item.deviceid}}</ion-select-option>
+        
+       
+      </div>
       </ion-select>
 
     <ion-title></ion-title>
@@ -91,3 +94,19 @@
 
 
 </ion-grid>
+
+
+
+
+  <ion-tab-bar slot="bottom">
+     
+    <ion-tab-button [routerLink]="['/prod']"  >
+      <ion-icon name="beer"></ion-icon>
+          <ion-label>Ventas</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/producto']"  >
+      <ion-icon name="compass"></ion-icon>
+          <ion-label>Productos</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+ 

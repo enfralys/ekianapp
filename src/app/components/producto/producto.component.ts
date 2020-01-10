@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/apis/data.service';
 import { ToastController, LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-producto',
@@ -12,11 +13,18 @@ export class ProductoComponent implements OnInit {
   machinel = "Maquina ubicada en el centro comercial:"
   total = 0;
   totalt = 0;
+  dispositives = [];
   date :boolean = true;
   mdate;
   ddate;
-  constructor(private service: DataService,public toastController: ToastController,public loadingController: LoadingController) { 
+  sdispositive;
+  constructor(private storage: Storage,private service: DataService,public toastController: ToastController,public loadingController: LoadingController) { 
     this.mdate = this.mdate;
+   this.storage.get('dispositives').then(res => {
+     console.log( JSON.parse(res));
+     this.dispositives = JSON.parse(res)
+    
+    })
   }
 
   ngOnInit() {}
@@ -28,11 +36,11 @@ export class ProductoComponent implements OnInit {
   }
 
   take(){
-    console.log(this.ddate,this.mdate);
+    console.log(this.ddate,this.mdate,this.sdispositive);
 
     if(this.ddate){
       console.log('dia');
-    let dvid   = "IPTA-S-A000";
+    let dvid   =  this.sdispositive;
     let date = new Date(this.ddate);
     console.log(date.getDate(),date.getMonth()+1,date.getFullYear());
     this.presentLoading();
@@ -48,7 +56,7 @@ this.service.getAcumMes(dvid,date.getMonth()+1,date.getFullYear()).subscribe(res
 }else{
   console.log('mes');
 
-  let dvid   = "IPTA-S-A000";
+  let dvid   = this.sdispositive;
   let date = new Date(this.mdate);
   console.log(date.getDate(),date.getMonth()+1,date.getFullYear());
   this.presentLoading();

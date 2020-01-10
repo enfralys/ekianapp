@@ -2,5 +2,7 @@
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">localhost</domain>
+         <domain includeSubdomains="true">104.248.8.47</domain>
+          <domain includeSubdomains="true">ekiavending.com</domain>
     </domain-config>
 </network-security-config>

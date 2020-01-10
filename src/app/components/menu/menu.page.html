@@ -3,11 +3,14 @@
   <ion-toolbar color="rojo">
   
     
-    <ion-select slot="secondary" placeholder="Dispositive">
-      <ion-select-option value="f">A100</ion-select-option>
-      <ion-select-option value="m">S500</ion-select-option>
+   
+    
+    <ion-select slot="secondary" placeholder="Dispositivos" [(ngModel)]="sdispositive" (ionChange)="codeSelected()">
+      <div *ngFor="let item of dispositives">
+      <ion-select-option  value ="{{item.nickname}}" >{{item.nickname}}</ion-select-option>
+     
+    </div>
     </ion-select>
-
 
     <ion-title></ion-title>
 
@@ -24,10 +27,15 @@
  
   <div class="pad" >
     <ion-row>
-      <ion-col size="9"> <p> Cantidad de productos: {{productos.length}}</p></ion-col>
-      <ion-col  class="center" size="3"><ion-button  color="medium" (click)="presentModal()">
-        <ion-icon name="list"></ion-icon>     
-       </ion-button>
+      <ion-col size="8"> <p> Cantidad de productos: {{productos.length}}</p></ion-col>
+      <ion-col  class="center" size="2"><ion-button  color="medium" (click)="back()">
+        <ion-icon name="skip-backward"></ion-icon>
+            </ion-button>
+    </ion-col>
+        <ion-col  class="center" size="2"><ion-button  color="medium" (click)="next()">
+
+          <ion-icon name="skip-forward"></ion-icon>    
+           </ion-button>
       </ion-col>
     </ion-row>
 
@@ -63,3 +71,17 @@
   </ion-list>
   </div>
 </ion-content>
+
+
+  <ion-tab-bar slot="bottom">
+     
+    <ion-tab-button [routerLink]="['/prod']" routerLinkActive="router-link-active" >
+      <ion-icon name="beer"></ion-icon>
+          <ion-label>Ventas</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/producto']" routerLinkActive="router-link-active" >
+      <ion-icon name="compass"></ion-icon>
+          <ion-label>Productos</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+ 
