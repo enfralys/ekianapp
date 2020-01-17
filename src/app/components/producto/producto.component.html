@@ -1,112 +1,34 @@
-<ion-header color="danger">
-  <ion-toolbar color="rojo">
-  
+
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
     
-      <ion-select slot="secondary" placeholder="Dispositive" [(ngModel)]="sdispositive">
-        <div *ngFor="let item of dispositives">
-        <ion-select-option  value ="{{item.deviceid}}" >{{item.deviceid}}</ion-select-option>
-        
-       
-      </div>
-      </ion-select>
-
-    <ion-title></ion-title>
-
-    <ion-buttons slot="primary">
-      <ion-button>
-        <ion-avatar slot="icon-only">
-          <img src="assets/avtar.jpg">
-        </ion-avatar>      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-grid fixed class="grid1">
-  <ion-row>
-   <ion-text >
-    <p style="font-family: roboto-regular;
-    font-size: 24px;"> {{location}}</p>
-   </ion-text> 
-    <ion-text style="margin-top: -10%;" >
-      <p style="font-family: roboto;
-      font-weight: normal;
-      font-size: 13px;
-      /* line-height: 0px; */
-      color: #757575;"> {{machinel}}</p>
-    </ion-text>
-  </ion-row>
-
-  <ion-row>
- <ion-card class="card"> 
-   <ion-card-header>
-     <ion-grid fixed>
-       <ion-row>
-         <ion-col size="4">   
-<ion-button  color="medium" (click)="day()">
-  Dia
-</ion-button>            </ion-col>
-         <ion-col size="4">     
-           <ion-card-subtitle>|</ion-card-subtitle>
-          </ion-col>
-          <ion-col size="4">     
-            <ion-button  color="medium" (click)="month()">
-            Mes
-            </ion-button>                     </ion-col>
-       </ion-row>
-       <ion-row style="margin-top: 20px; margin-bottom: 20px;">
-        <ion-item *ngIf="date">
-          <ion-label position="stacked">Escoge tu mes</ion-label>
-          <ion-datetime displayFormat="MMMM YYYY" min="2016-06-04" max="2030-08-23"   [(ngModel)]="mdate"></ion-datetime>
-        </ion-item>
-        
-    <ion-item *ngIf="!date">
-     <ion-label  position="stacked">Escoge tu dia</ion-label>
-         <ion-datetime displayFormat="MMM DD YY" [(ngModel)]="ddate" placeholder="Select Dia"></ion-datetime>
-    </ion-item>
-       </ion-row>
-
-      
-
-  <ion-row>
-      <ion-text color="dark">
-        <h1>{{total}}</h1>
-        <p class="sub">Ventas totales</p>
-      </ion-text>
+    <ion-row align-items-center>
+      <div class="center"><h2>Acumulado</h2></div> 
     </ion-row>
-
-           
-  <ion-row>
-    <ion-text color="dark">
-      <h1>{{totalt}}</h1>
-      <p class="sub">Transacciones totales</p>
-    </ion-text>
-  </ion-row>
-  
-  <ion-row>
-    <ion-button (click)="take()" style="width: 100%;" color="medium" expand="block">Buscar</ion-button>
-
-  </ion-row>
-     </ion-grid>
-
-   </ion-card-header>
- </ion-card>
-  </ion-row>
-
+     <ion-row>
+       
+        <p>Fecha: </p>  <ion-datetime placeholder-color="medium" displayFormat="MM DD YY" placeholder="Seleccione una fecha"></ion-datetime>
+      
+    </ion-row>
+    <ion-row align-items-center>
+    <div style="display: flex; justify-content: space-evenly; width: 100%;">
+    <div  class="circulos"  > 210000</div>
+    <div  class="circulos"  > 256000</div>
+    </div>
+    </ion-row>
+    <ion-card-content>
+      <canvas #barChart></canvas>
+    </ion-card-content>
 
 </ion-grid>
 
 
 
 
-  <ion-tab-bar slot="bottom">
-     
-    <ion-tab-button [routerLink]="['/prod']"  >
-      <ion-icon name="beer"></ion-icon>
-          <ion-label>Ventas</ion-label>
-    </ion-tab-button>
-    <ion-tab-button [routerLink]="['/producto']"  >
-      <ion-icon name="compass"></ion-icon>
-          <ion-label>Productos</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
- 

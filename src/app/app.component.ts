@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
@@ -12,21 +12,66 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   route:string;
+  navigate : any;  
+  public appPages = [
+    {
+      title: 'Acumulados',
+      url: '/prod',
+      icon: 'home'
+    },
+    {
+      title: 'Productos',
+      url: '/producto',
+      icon: 'list'
+    },
+    {
+      title: 'Configuraciones',
+      url: '/config',
+      icon: 'settings'
+    }
+  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private router:Router
+    private router:Router,
+    private menu:MenuController
   ) {
+    this.sideMenu();
+
     this.initializeApp();
+    
     this.route = this.router.url
 console.log(this.route);
   }
-
+  
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+
+  sideMenu()
+  {
+    this.navigate =
+    [
+      {
+        title : "Home",
+        url   : "/home",
+        icon  : "home"
+      },
+      {
+        title : "Chat",
+        url   : "/chat",
+        icon  : "chatboxes"
+      },
+      {
+        title : "Contacts",
+        url   : "/contacts",
+        icon  : "contacts"
+      },
+    ]
   }
 }

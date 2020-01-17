@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 import { DataService } from '../apis/data.service';
-import { ToastController, LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController, MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-login',
@@ -11,9 +11,10 @@ import { Storage } from '@ionic/storage';
 })
 export class LoginPage {
 email;password;tabBarElement 
-  constructor(private storage: Storage,private router:Router,private service:DataService,public toastController: ToastController,public loadingController: LoadingController)
+  constructor(private menu:MenuController, private storage: Storage,private router:Router,private service:DataService,public toastController: ToastController,public loadingController: LoadingController)
   
   {
+    this.menu.enable(false);
 /*
     this.service.autDispen().subscribe(res=>{
     setTimeout(() => {

@@ -5,12 +5,13 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { LoginPage } from './login/login.page';
 import { MenuPage } from './components/menu/menu.page';
 import { DeviceselectComponent } from './components/deviceselect/deviceselect.component';
-
+import { ConfigurationsComponent } from './components/configurations/configurations.component';
+ 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'prod', pathMatch: 'full' },
   { path: 'home', component:LoginPage},
   { path: 'producto', component:MenuPage},
-
+  { path: 'config', component: ConfigurationsComponent },
   { path: 'dash', component: DashboardComponent },
   { path: 'prod', component: ProductoComponent },
   { path: 'select', component: DeviceselectComponent },

@@ -22,10 +22,11 @@ import { MenuPage } from './components/menu/menu.page';
 import { IonicStorageModule } from '@ionic/storage';
 import { Storage } from '@ionic/storage';
 import { DeviceselectComponent } from './components/deviceselect/deviceselect.component';
+import { ConfigurationsComponent } from './components/configurations/configurations.component';
 
 
 @NgModule({
-  declarations: [AppComponent,DashboardComponent,DeviceselectComponent,ProductoComponent,ModalproductosComponent,LoginPage,MenuPage],
+  declarations: [AppComponent,ConfigurationsComponent,DashboardComponent,DeviceselectComponent,ProductoComponent,ModalproductosComponent,LoginPage,MenuPage],
   entryComponents: [ModalproductosComponent],
   imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule,
    NativeHttpModule,

@@ -1,14 +1,32 @@
  .grid1{
     padding-right: 5%;
     padding-left: 5%;
-    background: rgb(107,17,26);
-    background: linear-gradient(180deg, rgba(107,17,26,1) 23%, rgba(255,255,255,1) 23%, rgba(255,255,255,1) 66%, rgba(107,17,26,1) 66%);    
+    background: #ffffff;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    border-bottom: 2px solid red;
+   // background: linear-gradient(180deg, rgba(211,57,57,1) 23%, rgba(255,255,255,1) 23%, rgba(255,255,255,1) 66%, rgba(211,57,57,1) 66%);    
 }
     
  p{
-     color: white;
+     color: black;
  }
 
+ .center{
+text-align: center;
+width: 100%;
+ }
+
+ .circulos{display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+        height: 130px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid #d33939;
+ }
  ion-toolbar{
     .toolbar-background
     {
@@ -19,7 +37,7 @@
      color: white;
     padding-right: 2%;
     padding-left: 2%;
-    background-color:#6b111a; 
+    
     
  }
 

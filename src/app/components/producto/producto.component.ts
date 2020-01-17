@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/apis/data.service';
 import { ToastController, LoadingController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-producto',
@@ -9,9 +10,12 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./producto.component.scss'],
 })
 export class ProductoComponent implements OnInit {
+  @ViewChild('barChart',{static: false}) barChart;
   location = "Ver acumulado";
   machinel = "Maquina ubicada en el centro comercial:"
   total = 0;
+  bars: any;
+  colorArray: any;
   totalt = 0;
   dispositives = [];
   date :boolean = true;
@@ -28,6 +32,10 @@ export class ProductoComponent implements OnInit {
   }
 
   ngOnInit() {}
+  ionViewDidEnter() {
+    this.createBarChart();
+  }
+
 
   day(){
     if(this.date == true){
@@ -105,4 +113,33 @@ this.mdate = null;
     toast.present();
   }
 
+
+  createBarChart() {
+    
+      let bars = this.barChart.nativeElement
+      bars.height = 300;
+     
+    this.bars = new Chart(bars, {
+      type: 'line',
+      data: {
+        labels: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6'],
+        datasets: [{
+          label: 'Ultimos 6 meses',
+          data: [2.5, 3.8, 5, 6.9, 6.9, 7.5],
+          backgroundColor: '#d33939', // array should have same number of elements as number of dataset
+          borderColor: '#d33939',// array should have same number of elements as number of dataset
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  }
 }

@@ -1,25 +1,11 @@
 
-<ion-header color="danger">
-  <ion-toolbar color="rojo">
-  
-    
+
+<ion-header >
+  <ion-toolbar>
+      <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
    
-    
-    <ion-select slot="secondary" placeholder="Dispositivos" [(ngModel)]="sdispositive" (ionChange)="codeSelected()">
-      <div *ngFor="let item of dispositives">
-      <ion-select-option  value ="{{item.nickname}}" >{{item.nickname}}</ion-select-option>
-     
-    </div>
-    </ion-select>
-
-    <ion-title></ion-title>
-
-    <ion-buttons slot="primary">
-      <ion-button>
-        <ion-avatar slot="icon-only">
-          <img src="assets/avtar.jpg">
-        </ion-avatar>      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -72,16 +58,3 @@
   </div>
 </ion-content>
 
-
-  <ion-tab-bar slot="bottom">
-     
-    <ion-tab-button [routerLink]="['/prod']" routerLinkActive="router-link-active" >
-      <ion-icon name="beer"></ion-icon>
-          <ion-label>Ventas</ion-label>
-    </ion-tab-button>
-    <ion-tab-button [routerLink]="['/producto']" routerLinkActive="router-link-active" >
-      <ion-icon name="compass"></ion-icon>
-          <ion-label>Productos</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
- 
