@@ -17,12 +17,12 @@ export class AppComponent {
     {
       title: 'Acumulados',
       url: '/prod',
-      icon: 'home'
+      icon: 'stats'
     },
     {
       title: 'Productos',
       url: '/producto',
-      icon: 'list'
+      icon: 'beer'
     },
     {
       title: 'Configuraciones',

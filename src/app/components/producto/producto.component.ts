@@ -126,7 +126,7 @@ this.mdate = null;
         datasets: [{
           label: 'Ultimos 6 meses',
           data: [2.5, 3.8, 5, 6.9, 6.9, 7.5],
-          backgroundColor: '#d33939', // array should have same number of elements as number of dataset
+          backgroundColor: '#ffffff', // array should have same number of elements as number of dataset
           borderColor: '#d33939',// array should have same number of elements as number of dataset
           borderWidth: 1
         }]
